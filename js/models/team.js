@@ -37,36 +37,11 @@ function createTeam() {
         return b.points - a.points;
       });
       return arr.splice(0, 3);
-    }
-
+    };
   }
 };
 
 let team = createTeam()
-//
-// function allTeams() {
-//   return store.teams
-// };
-//
-// function findTeamById(id) {
-//   return store.teams.filter( (team) => {
-//     return team.id === id
-//   })[0]
-// };
-//
-// function findTeamByName(name) {
-//   return store.teams.filter( (team) => {
-//     return team.name === name
-//   })[0]
-// };
-//
-// function teamPlayers(team) {
-//   return store.players.filter( (player) => {
-//     // debugger
-//     return player.team.name === team.name
-//   })
-// };
-
 
 new team('Chickens', 'Philly')
 new team('Turkeys', 'Bahston')

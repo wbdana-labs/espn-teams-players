@@ -2,14 +2,14 @@ function createPlayer() {
   let playerCount = 0;
 
   return class Player {
-    constructor(name, teamName, hometown, birthyear, points) {
+    constructor(name, teamName, hometown, birthday, points) {
       this.id = ++playerCount;
       this.name = name;
       // this.team = findTeamByName(teamName);
       this.team = team.findByName(teamName)[0];
-      this.points = points
+      this.points = parseInt(points);
       this.hometown = hometown;
-      this.birthyear = birthyear;
+      this.birthday = birthday;
       store.players.push(this);
     };
 
@@ -46,11 +46,11 @@ function findPlayerById(id){
 };
 
 
-new player('Nate Robinson', 'Turkeys', 'NYC', 1977, 35)
-new player('Jim Brady', 'Chickens', 'NYC', 1977, 37)
-new player('Odin', 'Norse Gods', 'NYC', 1977, 44)
-new player('Thor', 'Norse Gods', 'NYC', 1977, 29)
-new player('Freyja', 'Norse Gods', 'NYC', 1977, 78)
-new player('Balder', 'Norse Gods', 'NYC', 1977, 29)
-new player('Frigg', 'Norse Gods', 'NYC', 1977, 17)
-new player('Sif', 'Norse Gods', 'NYC', 1977, 12)
+new player('Nate Robinson', 'Turkeys', 'NYC', 'July 17, 1977', 35)
+new player('Jim Brady', 'Chickens', 'NYC', 'July 17, 1977', 37)
+new player('Odin', 'Norse Gods', 'NYC', 'July 17, 1977', 44)
+new player('Thor', 'Norse Gods', 'NYC', 'July 17, 1977', 29)
+new player('Freyja', 'Norse Gods', 'NYC', 'July 17, 1977', 78)
+new player('Balder', 'Norse Gods', 'NYC', 'July 17, 1977', 29)
+new player('Frigg', 'Norse Gods', 'NYC', 'July 17, 1977', 17)
+new player('Sif', 'Norse Gods', 'NYC', 'July 17, 1977', 12)
