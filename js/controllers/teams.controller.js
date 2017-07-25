@@ -1,8 +1,45 @@
 $(document).ready(function(){
+  toggleAddTeamForm();
+  addTeam();
   renderTeamsList();
   hideThreePlayers();
   toggleThreePlayers();
 });
+
+function toggleAddTeamForm() {
+  $('#show_add_team').on('click', (event) => {
+    event.preventDefault();
+    $('#add_team').toggle();
+  })
+};
+
+function addTeam() {
+  $('#add_team').on('submit', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    let team_name = $('#team_name').val();
+    let team_city = $('#team_city').val();
+    let newTeam = new team(team_name, team_city);
+    // need to add to list of teams for add_player selector
+    $('#select_team').append(`<option value=${newTeam.name}>${newTeam.name}</option>`)
+    appendNewTeam(newTeam);
+    $('#add_team')[0].reset();
+    $('#team_name').focus();
+  })
+};
+
+// function addList(){
+//
+//   $('#add_list').on('submit', function(event){
+//     let newList = new List($('#list_title').val())
+//     $('#select_list').append(`<option value=${newList.id}>${newList.title}</option>`)
+//     $('#add_task').show()
+//     $('#lists').append(`<div id='tasks_div_${newList.id}' class="list"><h2><button class="destroy-list">x</button> ${newList.title}</h2><ul id="${newList.id}" data-id="${newList.id}"></ul></div>`)
+//     $('#add_list')[0].reset()
+//     $('#task_description').focus()
+//     event.preventDefault()
+//   })
+// }
 
 function renderTeamsList() {
   store.teams.forEach(function(team) {

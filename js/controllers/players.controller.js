@@ -1,7 +1,38 @@
 $(document).ready(function(){
   hidePlayerDetail();
   showPlayerDetail();
+  toggleAddPlayerForm();
+  populateSelectTeam();
+  addPlayer();
 });
+
+function toggleAddPlayerForm() {
+  $('#show_add_player').on('click', (event) => {
+    event.preventDefault();
+    $('#add_player').toggle();
+  })
+  $('#select_team').toggle();
+};
+
+function populateSelectTeam() {
+  team.all().forEach(function(team) {
+    $('#select_team').append(`<option value=${team.name}>${team.name}</option>`)
+  })
+};
+
+function addPlayer() {
+  $('#add_player').on('submit', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    let player_name = $('#player_name').val();
+    let player_team = $('#select_team').val();
+    let player_hometown = $('#player_hometown').val();
+    let player_birthday = $('#player_birthday').val();
+    let player_points = $('#player_points').val();
+    let newPlayer = new player(player_name, player_team, player_hometown, player_birthday, player_points)
+  })
+};
+
 
 function hidePlayerDetail() {
   $('#player_detail').hide()

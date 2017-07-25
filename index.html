@@ -15,6 +15,34 @@
     <title>ESPN</title>
   </head>
   <body>
+    <button type="button" name="button" id="show_add_team">Show/hide add team form</button>
+
+    <button type="button" name="button" id="show_add_player">Show/hide add player form</button>
+
+    <form id="add_team" action="#" method="post" style="display: none;">
+      <label for="team_name">Team name:</label>
+      <input type="text" id="team_name" name="team_name" placeholder="Team Name">
+      <label for="team_city">Team city:</label>
+      <input type="text" id="team_city" name="team_city" placeholder="Team City">
+      <input type="submit" value="Create new team">
+    </form>
+
+    <form id="add_player" action="#" method="post" style="display: none;">
+      <label for="player_name">Player name:</label>
+      <input type="text" id="player_name" placeholder="Player Name">
+      <label for="select_team">Select Team:</label>
+      <select id="select_team" name="select_team"></select>
+      <label for="player_hometown">Player hometown:</label>
+      <input type="text" id="player_hometown" name="player_hometown" placeholder="Player Hometown">
+      <label for="player_birthday">Player Birthday</label>
+      <input type="text" id="player_birthday" name="player_birthday" placeholder="Player Birthday">
+      <label for="player_points">Player Points:</label>
+      <input type="text" id="player_points" name="player_points" placeholder="Player Points">
+      <input type="submit" value="Create new player">
+    </form>
+    <!-- Gotta make some forms here -->
+    <!-- Add team, add player -->
+    <!-- Add delete player button to player_detail view -->
 
     <table id="teams_table">
       <thead>
