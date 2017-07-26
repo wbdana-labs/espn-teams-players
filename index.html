@@ -3,8 +3,10 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/master.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
     <script src="./js/store.js"></script>
     <script src="./js/controllers/teams.controller.js"></script>
     <script src="./js/models/team.js"></script>
@@ -15,66 +17,71 @@
     <title>HypoFeed - Your source for ALL Hypothetical Sportsball stats EVER! </title>
   </head>
   <body>
-    <div class="" align="center"><h4>HypoFeed</h4>
-    <h5>The (literally) only source for hypothetical sportsball stats</h5></div>
+    <!-- <div class="parallax-container">
+      <div class="parallax"><img src="./resources/img/beer.jpg"></div>
+    </div> -->
+    <!-- Parallax background image attempt; WIP -->
 
-    <!-- Gotta make some forms here -->
-    <!-- Add team, add player -->
-    <!-- Add delete player button to player_detail view -->
+    <div class="container">
+        <div class="" align="center"><h4>HypoFeed</h4>
+        <h5>The (literally) only source for hypothetical sportsball stats</h5></div>
 
-    <table class="highlight centered" id="teams_table">
-      <thead>
-        <th>Teams</th>
-      </thead>
-      <tr>
-        <td>ID</td>
-        <td>Team Name</td>
-        <td>Home City</td>
-      </tr>
-    </table>
+        <table class="highlight centered collapsible popout" id="player_detail" style="display: none;">
+        </table>
 
-    <table class="highlight centered collapsible popout" id="players_table">
-      <thead><th>Players</th></thead>
-      <tr>
-        <td>Player Name</td>
-        <td>Team Name</td>
-        <td>Points</td>
-      </tr>
-    </table>
+        <table class="highlight centered collapsible popout" id="players_table">
+          <thead><th>Players</th></thead>
+          <tr>
+            <td>Player Name</td>
+            <td>Team Name</td>
+            <td>Points</td>
+          </tr>
+        </table>
 
-    <table class="highlight centered collapsible popout" id="player_detail" style="display: none;">
-    </table>
 
-  <div class="" align="center">
-      <button type="button" name="button" id="show_add_team">Show/hide add team form</button>
-      <button type="button" name="button" id="show_add_player">Show/hide add player form</button>
-  </div>
+        <table class="highlight centered" id="teams_table">
+          <thead>
+            <th>Teams</th>
+          </thead>
+          <tr>
+            <td>ID</td>
+            <td>Team Name</td>
+            <td>Home City</td>
+          </tr>
+        </table>
 
-  <div class="" align="center">
-    <form id="add_team" action="#" method="post" style="display: none;">
-      <label for="team_name">Team name:</label>
-      <input type="text" id="team_name" name="team_name" placeholder="Team Name">
-      <label for="team_city">Team city:</label>
-      <input type="text" id="team_city" name="team_city" placeholder="Team City">
-      <input type="submit" value="Create new team">
-    </form>
-  </div>
+      <div class="" align="center">
+          <button type="button" name="button" id="show_add_team">Show/hide add team form</button>
+          <button type="button" name="button" id="show_add_player">Show/hide add player form</button>
+      </div>
 
-  <div class="" align="center">
-    <form id="add_player" action="#" method="post" style="display: none;">
-      <label for="player_name">Player name:</label>
-      <input type="text" id="player_name" placeholder="Player Name">
-      <label for="select_team">Select Team:</label>
-      <select id="select_team" name="select_team" class="dropdown"></select>
-      <label for="player_hometown">Player hometown:</label>
-      <input type="text" id="player_hometown" name="player_hometown" placeholder="Player Hometown">
-      <label for="player_birthday">Player Birthday</label>
-      <input type="text" id="player_birthday" name="player_birthday" placeholder="Player Birthday">
-      <label for="player_points">Player Points:</label>
-      <input type="text" id="player_points" name="player_points" placeholder="Player Points">
-      <input type="submit" value="Create new player">
-    </form>
-  </div>
+      <div class="" align="center">
+        <form id="add_team" action="#" method="post" style="display: none;">
+          <label for="team_name">Team name:</label>
+          <input type="text" id="team_name" name="team_name" placeholder="Team Name">
+          <label for="team_city">Team city:</label>
+          <input type="text" id="team_city" name="team_city" placeholder="Team City">
+          <input type="submit" value="Create new team">
+        </form>
+      </div>
+
+      <div class="" align="center">
+        <form id="add_player" action="#" method="post" style="display: none;">
+          <label for="player_name">Player name:</label>
+          <input type="text" id="player_name" placeholder="Player Name">
+          <label for="select_team">Select Team:</label>
+          <select id="select_team" name="select_team" class="dropdown"></select>
+          <label for="player_hometown">Player hometown:</label>
+          <input type="text" id="player_hometown" name="player_hometown" placeholder="Player Hometown">
+          <label for="player_birthday">Player Birthday</label>
+          <input type="text" id="player_birthday" name="player_birthday" placeholder="Player Birthday">
+          <label for="player_points">Player Points:</label>
+          <input type="text" id="player_points" name="player_points" placeholder="Player Points">
+          <input type="submit" value="Create new player">
+        </form>
+      </div>
+    </div>
+
 
 
   </body>

@@ -47,7 +47,7 @@ function findPlayerById(id){
 
 
 new player('Nate Robinson', 'Turkeys', 'NYC', 'July 17, 1977', 35)
-new player('Jim Brady', 'Chickens', 'NYC', 'July 17, 1977', 37)
+new player('Jim Brady', 'Roosters', 'NYC', 'July 17, 1977', 37)
 new player('Odin', 'Norse Gods', 'NYC', 'July 17, 1977', 44)
 new player('Thor', 'Norse Gods', 'NYC', 'July 17, 1977', 29)
 new player('Freyja', 'Norse Gods', 'NYC', 'July 17, 1977', 78)

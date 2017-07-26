@@ -9,9 +9,12 @@ $(document).ready(function(){
 function toggleAddPlayerForm() {
   $('#show_add_player').on('click', (event) => {
     event.preventDefault();
+    $('#add_team').hide();
     $('#add_player').toggle();
+    $('#select_team').toggle();
+    $('#add_player')[0].reset();
   })
-  $('#select_team').toggle();
+  // $('#select_team').toggle(); // This was in the wrong spot; test to be sure
 };
 
 function populateSelectTeam() {
@@ -29,7 +32,12 @@ function addPlayer() {
     let player_hometown = $('#player_hometown').val();
     let player_birthday = $('#player_birthday').val();
     let player_points = $('#player_points').val();
-    let newPlayer = new player(player_name, player_team, player_hometown, player_birthday, player_points)
+    if ( player_name  === '' || player_team === '' || player_hometown === '' || player_birthday === '' || player_points === '') {
+      alert('You must complete all fields to continue.')
+      return;
+    };
+    let newPlayer = new player(player_name, player_team, player_hometown, player_birthday, player_points);
+    alert('Success!')
   })
 };
 

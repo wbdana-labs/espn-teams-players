@@ -43,6 +43,6 @@ function createTeam() {
 
 let team = createTeam()
 
-new team('Chickens', 'Philly')
+new team('Roosters', 'Philly')
 new team('Turkeys', 'Bahston')
 new team('Norse Gods', 'Brooklyn')
