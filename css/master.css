@@ -1,0 +1,19 @@
+div {
+  display: block;
+  padding-bottom: 25px;
+  height: auto;
+  width: auto;
+};
+
+body {
+    background-image: url("../resources/img/beer.jpg");
+};
+
+h5 {
+  color: red;
+}
+
+img {
+  height: auto;
+  width: auto;
+}
