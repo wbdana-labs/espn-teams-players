@@ -4,6 +4,7 @@ $(document).ready(function(){
   renderTeamsList();
   hideThreePlayers();
   toggleThreePlayers();
+  $('.collapsible').collapsible();
 });
 
 function toggleAddTeamForm() {
